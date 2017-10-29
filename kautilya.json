@@ -5,5 +5,14 @@
 	"14fa484a-39e5-4a4c-b317-dd84bfaa3b5e": "The Homepage",
 	"54d63832-b5fe-43e1-b740-84872b3109a4": "Loading...",
 	"5d4f80b4-6026-407f-9100-919a9e538200": "https://cdn.rawgit.com/joshpitzalis/kautilya/ca9611d5777137ffc1b91c883453d447ac160613/images/maibpage.png",
-	"8b445701-efa9-45ac-9092-8055eea2de81": "Loading..."
+	"8b445701-efa9-45ac-9092-8055eea2de81": "Loading...",
+	"collection": [
+		{
+			"14fa484a-39e5-4a4c-b317-dd84bfaa3b5e": "Loading...",
+			"54d63832-b5fe-43e1-b740-84872b3109a4": "Loading...",
+			"5d4f80b4-6026-407f-9100-919a9e538200": "img/placeholder.png",
+			"8b445701-efa9-45ac-9092-8055eea2de81": "Loading..."
+		},
+		{}
+	]
 }
