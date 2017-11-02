@@ -58,7 +58,12 @@
 	"305e4f73-7ce4-4b30-83cc-08beb56b838e": "https://cdn.rawgit.com/joshpitzalis/kautilya/95f5e2c2c3fbb278869591e5c26d18f1a81a0844/images/Screen%20Shot%202017-10-27%20at%2014.35.58.png",
 	"bc9ed894-8937-4b54-9660-661ea82bd844": "Loading...",
 	"a0b7ff36-623d-4103-bec8-b11a30b9d414": "Next Steps...",
-	"2905e7da-4dd2-46e6-96b4-9dfdbeee972e": "add comments, reviews, checkout, wishlist\nremove blog, editing, mailing list",
+	"2905e7da-4dd2-46e6-96b4-9dfdbeee972e": [
+		"add comments, reviews, checkout, wishlist\nremove blog, editing, mailing list",
+		"Joshua Pittman",
+		"Freelance web developer",
+		" comments, reviews, checkout, wishlist\nremove blog, editing, mailing list"
+	],
 	"525684a7-cfa8-4002-8c48-78976e386ab4": "Loading...",
 	"a43b9529-1e16-412e-90e8-badcf467d5d4": "next steps",
 	"bf9fa68e-4088-41a8-8066-fe154221dac8": "Loading...",
