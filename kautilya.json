@@ -49,8 +49,8 @@
 		"tps://cdn.rawgit.com/joshpitzalis/kautilya/1fb1f2a87a0038a3ce2973576bfd682794d8cf70/images/admin%20writers.png"
 	],
 	"8ec057189-9cab-45e2-bd8b-a9782d37fb52": "The system will only display books in the Kautilya catalogue on an author's profile page. This is not a Bibliography of all their work. ",
-	"c26d79aa-7283-4f3f-a1ed-4d31414237a0": "Adding and Updating Posts",
-	"73831d05-73db-495e-8953-468d5c427082": "Adding, updating or removing posts is the same as updating books or authors. There is no individual post page as all the details can be edited from the dashboard directly.",
+	"c26d79aa-7283-4f3f-a1ed-4d31414237a0": "Adding and Updating News",
+	"73831d05-73db-495e-8953-468d5c427082": "Adding, updating or removing news items is the same as updating books or authors. There is no individual news item page as all the details can be edited from the dashboard directly.",
 	"3c13d2a6-cf6e-4b4a-8557-224645e44c43": "https://cdn.rawgit.com/joshpitzalis/kautilya/216d20cc0b2a8397ae58f666ce7f1c3c8c26f817/images/AdddsfgPost.png",
 	"65f7bbdf-18db-46f8-99ff-e626ca478f84": "This dashboard only manages video posts. If you want to include text based posts then you can add or remove a post from this dashboard, but editing post content will happen on a separate content management platform like contentful or wordpress.",
 	"69562257-2a63-44aa-b5fe-e53a8ab82691": "Cost and Timeline",
