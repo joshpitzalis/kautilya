@@ -1,31 +1,33 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import magnifyingGlass from '../images/search.svg';
+import { Link } from 'react-router-dom';
 export default class Navigation extends Component {
-  static propTypes = {}
+  static propTypes = {};
 
-  state = {}
+  state = {};
 
   render() {
     return (
-      <nav className="flex justify-between bb b--black-10 ">
+      <nav className="flex justify-between bb b--black-10 w-75-ns center shadow-3 ph3 mt3 br1">
         <h1>Kautilya</h1>
 
         <div className="flex-grow pa3 flex items-center">
-          <a className="f6 link dib  dim mr3 mr4-ns" href="#0">
-            About
-          </a>
-          <a className="f6 link dib  dim mr3 mr4-ns" href="#0">
-            Sign In
-          </a>
-          <a
-            className="f6 dib  bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--white-20"
-            href="#0"
-          >
-            Sign Up
-          </a>
+          <Link to="/about" className="f6 link dib  dim mr3 mr4-ns" href="#0">
+            BOOKS
+          </Link>
+          <Link to="/about" className="f6 link dib  dim mr3 mr4-ns" href="#0">
+            WRITERS
+          </Link>
+          <Link to="/about" className="f6 link dib  dim mr3 mr4-ns" href="#0">
+            NEWS
+          </Link>
+          <Link to="/about" className="f6 link dib  dim mr3 mr4-ns" href="#0">
+            CONTACT
+          </Link>
         </div>
+        <img src={magnifyingGlass} alt="" />
       </nav>
-    )
+    );
   }
 }

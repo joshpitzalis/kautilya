@@ -1,18 +1,18 @@
-import React, { Component, Fragment } from 'react'
-import ReactDOM from 'react-dom'
-import Homepage from './components/Homepage'
-import registerServiceWorker from './registerServiceWorker'
-import PropTypes from 'prop-types'
-import { BrowserRouter, Route } from 'react-router-dom'
-import * as route from './constants/routes'
-import Navigation from './components/Navigation'
-import Footer from './components/Footer'
-import './style.css'
+import React, { Component, Fragment } from 'react';
+import ReactDOM from 'react-dom';
+import Homepage from './components/Homepage/index.js';
+import registerServiceWorker from './registerServiceWorker';
+import PropTypes from 'prop-types';
+import { BrowserRouter, Route } from 'react-router-dom';
+import * as route from './constants/routes';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+import './style.css';
 
 export default class Routes extends Component {
-  static propTypes = {}
+  static propTypes = {};
 
-  state = {}
+  state = {};
 
   render() {
     return (
@@ -23,9 +23,9 @@ export default class Routes extends Component {
           <Footer />
         </Fragment>
       </BrowserRouter>
-    )
+    );
   }
 }
 
-ReactDOM.render(<Routes />, document.getElementById('root'))
-registerServiceWorker()
+ReactDOM.render(<Routes />, document.getElementById('root'));
+registerServiceWorker();
