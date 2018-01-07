@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import magnifyingGlass from '../images/search.svg';
+import Search from '../images/Search';
 import { Link } from 'react-router-dom';
 export default class Navigation extends Component {
   static propTypes = {};
@@ -9,7 +9,7 @@ export default class Navigation extends Component {
 
   render() {
     return (
-      <nav className="flex justify-between bb b--black-10 w-75-ns center shadow-3 ph3 mt3 br1">
+      <nav className="flex justify-between items-center bb b--black-10 w-75-ns center shadow-3 ph3 mt3 br2">
         <h1>Kautilya</h1>
 
         <div className="flex-grow pa3 flex items-center">
@@ -26,7 +26,7 @@ export default class Navigation extends Component {
             CONTACT
           </Link>
         </div>
-        <img src={magnifyingGlass} alt="" />
+        <Search />
       </nav>
     );
   }

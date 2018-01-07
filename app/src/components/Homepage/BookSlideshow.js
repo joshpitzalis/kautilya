@@ -24,16 +24,22 @@ class Slideshow extends Component {
     let currentChild = Children.toArray(this.props.children)[
       this.state.current
     ];
-    const buttons = Children.map(currentChild, child => (
-      <img src={child} height="200" />
+    const covers = Children.map(currentChild, child => (
+      <img src={child} className="shadow-1" height="200" />
     ));
     const bullets = Array(this.state.total).fill('○');
     bullets[this.state.current] = '●';
     return (
-      <Fragment>
-        <div>{buttons}</div>
-        {bullets}
-      </Fragment>
+      <div className="flex flex-column items-center pv5">
+        <div className="flex flex-row ">
+          {covers}
+          <div className="ml3">
+            <h1 className="f1">Dr.lalalala ipsum loren</h1>
+            <p>something something</p>
+          </div>
+        </div>
+        <div className="mt3">{bullets}</div>
+      </div>
     );
   }
 }

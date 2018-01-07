@@ -1,21 +1,26 @@
 import React, { Component } from 'react'
-import Slideshow from './Slideshow'
+import BookSlideshow from './BookSlideshow'
+import AuthorSlideshow from './AuthorSlideshow'
+import Bookshelf from './Bookshelf'
 import realPashtun from '../../images/bookCovers/TheRealPashtunQuestion.png'
 import agnipariksha from '../../images/bookCovers/Agnipariksha.jpg'
 import tragicIllusion from '../../images/bookCovers/TheTragiclllusionOfAnIslamicState.png'
+
+import tarek from '../../images/authors/tarekFatah.jpg'
 
 class Homepage extends Component {
   render () {
     return (
       <div>
         <header>
-          <Slideshow>
+          <BookSlideshow>
             {realPashtun}
             {agnipariksha}
             {tragicIllusion}
-          </Slideshow>
+          </BookSlideshow>
         </header>
-        <h1>Our Bookshelf</h1>
+        <Bookshelf />
+        <AuthorSlideshow>{tarek}</AuthorSlideshow>
       </div>
     )
   }
