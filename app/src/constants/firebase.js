@@ -2,12 +2,12 @@ import firebase from 'firebase'
 require('firebase/firestore')
 
 const config = {
-  apiKey: 'AIzaSyC8cNQvlurWl_10dixHAzDRhuefpCtiXWo',
-  authDomain: 'peerplus-staging.firebaseapp.com',
-  databaseURL: 'https://peerplus-staging.firebaseio.com',
-  projectId: 'peerplus-staging',
-  storageBucket: 'peerplus-staging.appspot.com',
-  messagingSenderId: '972618418370'
+  apiKey: "AIzaSyCJorcUdpIohaOmHTyT35IG8tsvrRGLvLw",
+    authDomain: "kautilya-a97c0.firebaseapp.com",
+    databaseURL: "https://kautilya-a97c0.firebaseio.com",
+    projectId: "kautilya-a97c0",
+    storageBucket: "kautilya-a97c0.appspot.com",
+    messagingSenderId: "615282478682"
 }
 
 firebase.initializeApp(config)
