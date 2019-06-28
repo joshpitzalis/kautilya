@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #545963;
+  --blue: #44558f;
+  --light-blue: #f2fdff;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: var(--black);
+}
+
+p {
+  font-family: "Yrsa", serif;
+}
+
+:not(p) {
+  font-family: "Ramaraja", serif;
+  font-weight: lighter;
+}
+
+.grid > * {
+  margin: 0.5rem;
+}
+
+.bg-dark-blue {
+  background-color: var(--blue);
+}
+
+.bg-light-blue {
+  background-color: var(--light-blue);
+}

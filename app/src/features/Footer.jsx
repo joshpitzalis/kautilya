@@ -1,14 +1,13 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from "react";
 
 export default class Footer extends Component {
-  static propTypes = {}
+  static propTypes = {};
 
-  state = {}
+  state = {};
 
   render() {
     return (
-      <footer className="pa4 pa5-l black-70 bt b--black-10">
+      <footer className="pa4 pa5-l black-70 bt b--black-10 bg-white">
         <div className="mb4-l cf">
           <h1 className="fl w-100 pv0 f6 fw6 ttu tracked mb4">Studios</h1>
           <article className="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
@@ -185,6 +184,6 @@ export default class Footer extends Component {
           <p className="f7 black-70 mt4 tc">Copyright © Your Company 2038</p>
         </div>
       </footer>
-    )
+    );
   }
 }

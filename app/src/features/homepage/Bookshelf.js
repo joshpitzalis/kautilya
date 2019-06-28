@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
-import realPashtun from '../../images/bookCovers/TheRealPashtunQuestion.png';
-import agnipariksha from '../../images/bookCovers/Agnipariksha.jpg';
-import tragicIllusion from '../../images/bookCovers/TheTragiclllusionOfAnIslamicState.png';
+import React, { Component } from "react";
+import agnipariksha from "../../images/bookCovers/Agnipariksha.jpg";
+import realPashtun from "../../images/bookCovers/TheRealPashtunQuestion.png";
+import tragicIllusion from "../../images/bookCovers/TheTragiclllusionOfAnIslamicState.png";
 
 export default class Bookshelf extends Component {
   static propTypes = {};
@@ -12,7 +10,7 @@ export default class Bookshelf extends Component {
 
   render() {
     return (
-      <div>
+      <div className="bg-white">
         <h1 className="tc">Bookshelf</h1>
         <div className="w-75-ns center grid">
           <img src={realPashtun} alt="" height="200" />

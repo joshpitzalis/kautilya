@@ -1,4 +1,4 @@
-import React, { Component, Children, Fragment } from 'react';
+import React, { Children, Component } from "react";
 
 class Slideshow extends Component {
   state = {
@@ -27,10 +27,10 @@ class Slideshow extends Component {
     const covers = Children.map(currentChild, child => (
       <img src={child} className="shadow-1" height="200" />
     ));
-    const bullets = Array(this.state.total).fill('○');
-    bullets[this.state.current] = '●';
+    const bullets = Array(this.state.total).fill("○");
+    bullets[this.state.current] = "●";
     return (
-      <div className="flex flex-column items-center pv5 bg-blue">
+      <div className="flex flex-column items-center pv5 bg-dark-blue">
         <p>Our Writers</p>
         <div className="flex flex-row ">
           {covers}
