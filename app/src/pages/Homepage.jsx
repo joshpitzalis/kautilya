@@ -17,6 +17,8 @@ class Homepage extends Component {
             {agnipariksha}
             {tragicIllusion}
           </BookSlideshow>
+
+          <p className=" w-100 relative bottom-2 tc">scroll down</p>
         </header>
         <Bookshelf />
         <AuthorSlideshow>{tarek}</AuthorSlideshow>

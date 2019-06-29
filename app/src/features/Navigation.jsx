@@ -1,28 +1,85 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { animated, useSpring } from "react-spring";
 
-export default class Navigation extends Component {
-  static propTypes = {};
+const Navigation = () => {
+  const [toggle, setToggle] = React.useState(false);
 
-  state = {};
+  const fade = useSpring({
+    from: { opacity: 0 },
+    opacity: 1
+  });
 
-  render() {
-    return (
-      <nav className="flex justify-between items-center bb b--black-10 w-75-ns center shadow-3 ph3 br2 bg-white">
-        <h1>Kautilya</h1>
-        <div className="pa3 flex justify-end">
-          <Link to="/books" className="f6 link dib  dim mr3 mr4-ns" href="#0">
-            BOOKS
+  const mobileNavAnimation = useSpring({
+    transform: toggle ? `translate3d(0,0,0)` : `translate3d(100%, 0,0)`
+  });
+
+  return (
+    <animated.nav className="bg-transparent fixed w-100 z-999" style={fade}>
+      <div className="flex justify-between items-center bb b--black-10 w-75-ns center shadow-3 br1 ph4 bg-white center  ">
+        <Link to="/" className=" link dn dib-ns">
+          <h1>Kautilya</h1>
+        </Link>
+
+        <Link to="/" className=" link dn-ns dib ">
+          <h1>K</h1>
+        </Link>
+
+        <div className="pa3 flex-ns justify-end dn">
+          <Link
+            to="/books"
+            className="f6 link dib  dim mr3 mr4-ns ttu"
+            href="#0"
+          >
+            Books
           </Link>
-          <Link to="/authors" className="f6 link dib  dim mr3 mr4-ns" href="#0">
-            WRITERS
+          <Link
+            to="/authors"
+            className="f6 link dib  dim mr3 mr4-ns ttu"
+            href="#0"
+          >
+            Writers
           </Link>
-
-          <Link to="/contact" className="f6 link dib  dim mr3 mr4-ns" href="#0">
-            CONTACT
+          <Link
+            to="/contact"
+            className="f6 link dib  dim mr3 mr4-ns ttu"
+            href="#0"
+          >
+            Contact Us
           </Link>
         </div>
-      </nav>
-    );
-  }
-}
+        <p className="">हिंदी</p>
+        <div className="dn-ns dib" onClick={() => setToggle(!!!toggle)}>
+          ●
+        </div>
+      </div>
+
+      {/* {toggle && ( */}
+      <animated.article
+        className="vh-100  w-100 bg-dark-blue"
+        style={mobileNavAnimation}
+      >
+        <div className="flex flex-column  justify-between white ">
+          <Link to="/books" className="f2 link tc ttu light-blue mv4 pt4">
+            Books
+          </Link>
+          <Link to="/authors" className="f2 link tc ttu light-blue mv4">
+            Writers
+          </Link>
+          <Link to="/contact" className="f2 link tc ttu light-blue mv4">
+            Contact Us
+          </Link>
+          <button
+            className="mv4 tc f3 light-blue"
+            onClick={() => setToggle(false)}
+          >
+            close
+          </button>
+        </div>
+      </animated.article>
+      {/* )} */}
+    </animated.nav>
+  );
+};
+
+export default Navigation;

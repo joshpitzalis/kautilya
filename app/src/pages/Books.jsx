@@ -1,5 +1,5 @@
 import React from "react";
-
+import Overdrive from "react-overdrive";
 const Books = () => (
   <article className="cf ph3 ph5-ns pv5">
     <Details />
@@ -11,21 +11,23 @@ const Books = () => (
 );
 
 const Image = () => (
-  <div className="fn fl-ns w-50-ns">
-    <div class="aspect-ratio aspect-ratio--3x4 mb4">
-      {/* <div
+  <Overdrive id="bookCover" duration={1000}>
+    <div className="fn fl-ns w-50-ns">
+      <div class="aspect-ratio aspect-ratio--3x4 mb4">
+        {/* <div
         class="aspect-ratio--object cover"
         style={{
           background: "url(http://mrmrs.github.io/photos/001.jpg) center"
         }}
       /> */}
-      <img
-        className="db ba b--black-10"
-        alt="Frank Ocean Blonde Album Cover"
-        src="https://s3-us-west-1.amazonaws.com/tachyonsio/img/Blonde-Frank_Ocean.jpeg"
-      />
+        <img
+          className="db ba b--black-10"
+          alt="Frank Ocean Blonde Album Cover"
+          src="https://s3-us-west-1.amazonaws.com/tachyonsio/img/Blonde-Frank_Ocean.jpeg"
+        />
+      </div>
     </div>
-  </div>
+  </Overdrive>
 );
 
 const Details = () => (

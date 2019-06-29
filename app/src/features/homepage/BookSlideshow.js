@@ -1,4 +1,6 @@
 import React, { Children, Component } from "react";
+import Overdrive from "react-overdrive";
+import { animated, useSpring } from "react-spring";
 
 class Slideshow extends Component {
   state = {
@@ -24,24 +26,46 @@ class Slideshow extends Component {
     let currentChild = Children.toArray(this.props.children)[
       this.state.current
     ];
-    const covers = Children.map(currentChild, child => (
-      <img src={child} className="shadow-1" height="200" />
+
+    const books = Children.map(currentChild, child => (
+      <FeaturedBook child={child} />
     ));
+
     const bullets = Array(this.state.total).fill("○");
     bullets[this.state.current] = "●";
+
     return (
-      <div className="flex flex-column items-center pv5 bg-light-blue">
-        <div className="flex flex-row ">
-          {covers}
-          <div className="ml3">
-            <h1 className="f1">Dr.lalalala ipsum loren</h1>
-            <p>something something</p>
-          </div>
-        </div>
-        <div className="mt3">{bullets}</div>
+      <div className="flex flex-column items-center justify-center bg-light-blue vh-100">
+        <>
+          {books}
+          <div className="mt3">{bullets}</div>
+        </>
       </div>
     );
   }
 }
 
 export default Slideshow;
+
+const FeaturedBook = animated(({ child }) => {
+  const fade = useSpring({
+    from: { opacity: 0 },
+    opacity: 1,
+    config: { duration: 2000 }
+  });
+
+  return (
+    <section className="flex flex-row" style={fade}>
+      <Overdrive id="bookCover">
+        <figure>
+          <img src={child} className="shadow-1" height="350" alt="alt" />
+          <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+        </figure>
+      </Overdrive>
+      <div className="ml3">
+        <h1 className="f1">Dr.lalalala ipsum loren</h1>
+        <p>something something</p>
+      </div>
+    </section>
+  );
+});

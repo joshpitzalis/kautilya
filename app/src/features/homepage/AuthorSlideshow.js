@@ -30,11 +30,11 @@ class Slideshow extends Component {
     const bullets = Array(this.state.total).fill("○");
     bullets[this.state.current] = "●";
     return (
-      <div className="flex flex-column items-center pv5 bg-dark-blue">
+      <div className="flex flex-column items-center pv5 bg-dark-blue o-75 white">
         <p>Our Writers</p>
         <div className="flex flex-row ">
           {covers}
-          <div className="ml3">
+          <div className="ml3 ">
             <h1 className="f1">Tarek Fateh</h1>
             <p>something something</p>
           </div>
