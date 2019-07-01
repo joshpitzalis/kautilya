@@ -4,7 +4,6 @@ const Books = () => (
   <article className="cf ph3 ph5-ns pv5">
     <Details />
     <Image />
-
     <Description />
     <SideList />
   </article>

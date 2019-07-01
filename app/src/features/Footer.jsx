@@ -117,7 +117,7 @@ const Copyright = () => {
       <p className="f7 black-70 tc w-25-ns w-100">
         Copyright © Your Company 2038
       </p>
-      <hr className="o-50 w-75-ns dn" />
+      <hr className="o-50 w-75-ns dn dib-ns" />
     </div>
   );
 };

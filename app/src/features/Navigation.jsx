@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
 
-const Navigation = () => {
+const Navigation = ({ setLocale, locale }) => {
   const [toggle, setToggle] = React.useState(false);
 
   const fade = useSpring({
@@ -48,7 +48,12 @@ const Navigation = () => {
             Contact Us
           </Link>
         </div>
-        <p className="">हिंदी</p>
+        <p
+          className="f3 pointer dim grow"
+          onClick={() => setLocale(locale === "en" ? "hi" : "en")}
+        >
+          {locale === "en" ? "हिंदी पुस्तकें" : "English Books"}
+        </p>
         <div className="dn-ns dib" onClick={() => setToggle(!!!toggle)}>
           ●
         </div>

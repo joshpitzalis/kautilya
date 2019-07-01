@@ -1,4 +1,5 @@
 import React, { Children, Component } from "react";
+import { FormattedMessage } from "react-intl";
 import Overdrive from "react-overdrive";
 import { animated, useSpring } from "react-spring";
 
@@ -63,7 +64,9 @@ const FeaturedBook = animated(({ child }) => {
         </figure>
       </Overdrive>
       <div className="ml3">
-        <h1 className="f1">Dr.lalalala ipsum loren</h1>
+        <h1 className="f1">
+          <FormattedMessage id="homepage.bookSlideShow.featured" />
+        </h1>
         <p>something something</p>
       </div>
     </section>
