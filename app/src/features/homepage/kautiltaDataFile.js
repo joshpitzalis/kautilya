@@ -1,14 +1,3 @@
-import mahatma from "../../images/bookCovers/An_Hour_With_The_Mahatma_grande.jpg";
-import astro from "../../images/bookCovers/Astromentoring_Front_cover_grande.jpg";
-import good from "../../images/bookCovers/Being_good_Front_Cover_grande.jpg";
-import born from "../../images/bookCovers/Born_on_a_Tuesday_grande.jpg";
-import brahm from "../../images/bookCovers/Brahmacharya_Yoga_grande.jpg";
-import chase from "../../images/bookCovers/Chasing_Indias_Demographic_Dividend_grande.jpg";
-import chip from "../../images/bookCovers/Chip_in_the_Madrasa_grande.jpg";
-import communication from "../../images/bookCovers/Communication_Civilization_grande.jpg";
-import easy from "../../images/bookCovers/Easy_Motion_Tourist_grande.jpg";
-import dictionary from "../../images/bookCovers/Final_Dictionary_grande.jpg";
-
 const books = {
   1: {
     bookId: 1,
@@ -80,8 +69,8 @@ const books = {
     genre: ["yoga"],
     author: "Anuradha G",
     description: `The book has been written by Anuradha Goray. The author says that the present world is driven by high technology. So the people always quest for material success with little efforts. In such a situation, people need to effectively manage the lifestyle so that they would be able to maintain good health or the result will be devastating. Good maintenance and restoration of health is an art and a science as well. Therefore, the author advises that best methods are to drive away the maladies by practicing yoga which ensures a healthy and happy life.
-
-    For achieving the above mentioned objective, the stage of Brahmachaya is crucial. In this stage, the children can be made physically, mentally and spiritually fit so that they can create a well-developed, and progressive nation because the practice of yoga impact on respiratory, digestive and nervous system. It helps mould their behaviour by stabilizing the mind and enhancing creativity.`,
+  
+      For achieving the above mentioned objective, the stage of Brahmachaya is crucial. In this stage, the children can be made physically, mentally and spiritually fit so that they can create a well-developed, and progressive nation because the practice of yoga impact on respiratory, digestive and nervous system. It helps mould their behaviour by stabilizing the mind and enhancing creativity.`,
     purchaseLink: null,
     featured: false
   },
@@ -95,8 +84,8 @@ const books = {
     genre: [],
     author: "J.P. Rai",
     description: `The book, ‘Chasing India’s Demographic Dividend’ written by J.P. Rai, an ex- IAS officer and the Advisor to the Prime Minister on skill Development. The National skills Qualification Framework was developed under his leadership. In this book he expresses his opinion that there is no doubt that the growing millions of unemployed and unemployable youths in our country pose the biggest threat to the social and economic fabric of our country.
-
-    The author further mentions that the demographers make an assumption that those below 15 years of age are still in the stage of nurture and above the age of 60 have already lost their capacity to be economically productive. India’s demographic profile offers the potential for a caring and economically thriving society. To achieve its potential, the demographic bulge in productive age group must acquire the capacity to deliver as per expectation.`,
+  
+      The author further mentions that the demographers make an assumption that those below 15 years of age are still in the stage of nurture and above the age of 60 have already lost their capacity to be economically productive. India’s demographic profile offers the potential for a caring and economically thriving society. To achieve its potential, the demographic bulge in productive age group must acquire the capacity to deliver as per expectation.`,
     purchaseLink: null,
     featured: false
   },
@@ -109,8 +98,8 @@ const books = {
     genre: [],
     author: "Vivek Sinha",
     description: `The book ‘A Chip in the Madrsa’ is an insight into the real tale of madrasa. The book unravels the vicious game that is being played by the Wahhabis and their vice hold on the Muslim minds across the globe. An erudite and progressive minded Maulvi Sahab wants to teach science, mathematics and computers at his madrasa in an Indian village with the support of many wise villagers. But the local powerful politicians and a national political party want to sabotage the plans as they don’t like the introduction of modern education at the madrasa of the village. The
-
-    Wahhabis get fund from Saudi Arabia to unleash a lethal game to break the courage of Maulbi Sahab.`,
+  
+      Wahhabis get fund from Saudi Arabia to unleash a lethal game to break the courage of Maulbi Sahab.`,
     purchaseLink: null,
     featured: false
   },
@@ -140,8 +129,15 @@ const books = {
   }
 };
 
-const bookReducer = (state = books, action) => {
-  return state;
+const authors = {
+  1: {
+    id: 1,
+    name: `Tarek Fateh`,
+    picture: tarek,
+    about: "lorem Ipsum",
+    books: [1, 2, 3],
+    birthdate: "31 march 2019",
+    birthplace: "Mumbai, India",
+    quote: "something something"
+  }
 };
-
-export default bookReducer;

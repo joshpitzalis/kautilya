@@ -1,48 +1,84 @@
-import React, { Children, Component } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-class Slideshow extends Component {
-  state = {
-    total: 0,
-    current: 0
-  };
+const useInterval = (callback, delay) => {
+  // using set interval with useEffect https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 
-  componentDidMount() {
-    const { children } = this.props;
-    this.setState({ total: Children.count(children) });
-    this.interval = setInterval(this.showNext, 3000);
-  }
+  const savedCallback = React.useRef();
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
+  // Remember the latest callback.
+  React.useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
 
-  showNext = () => {
-    const { total, current } = this.state;
-    this.setState({ current: current + 1 === total ? 0 : current + 1 });
-  };
-  render() {
-    let currentChild = Children.toArray(this.props.children)[
-      this.state.current
-    ];
-    const covers = Children.map(currentChild, child => (
-      <img src={child} className="shadow-1" height="200" />
-    ));
-    const bullets = Array(this.state.total).fill("○");
-    bullets[this.state.current] = "●";
-    return (
-      <div className="flex flex-column items-center pv5 bg-dark-blue o-75 white">
-        <p>Our Writers</p>
-        <div className="flex flex-row ">
-          {covers}
-          <div className="ml3 ">
-            <h1 className="f1">Tarek Fateh</h1>
-            <p>something something</p>
-          </div>
-        </div>
-        <div className="mt3">{bullets}</div>
-      </div>
-    );
-  }
-}
+  // Set up the interval.
+  React.useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+};
+
+const Slideshow = () => {
+  const authors = useSelector(store => Object.values(store.authors));
+
+  const total = authors.length;
+  const [current, setCurrent] = React.useState(0);
+
+  useInterval(() => {
+    setCurrent(current + 1 === total ? 0 : current + 1);
+  }, 3000);
+
+  const bullets = Array(total).fill("○");
+  bullets[current] = "●";
+
+  return (
+    <div
+      className="flex flex-column items-center pv4 bg-dark-blue o-75 white"
+      id="writers"
+    >
+      <p className="f3 pv4">Our Writers</p>
+
+      {authors &&
+        authors.map(({ id, picture, name, about, quote, books }) => (
+          <Link
+            to={`author/${id}`}
+            className="pointer flex flex-row no-underline white "
+          >
+            <div className="mr3 tr">
+              <h3 className="f2">{name}</h3>
+              <p>{about}</p>
+              <div className="flex mv3">
+                <hr className=" w-90" />
+                <p className=" w-10">""</p>
+              </div>
+              <p>{quote}</p>
+            </div>
+
+            <img src={picture} className="shadow-1" height="300" />
+            <div className="ml3 tl flex flex-column justify-between">
+              <div>
+                <h4>About</h4>
+                <p>{about}</p>
+              </div>
+
+              <div>
+                <h4>Books</h4>
+                <p>{books}</p>
+              </div>
+              <p className="underline link white">Go to the writer's page...</p>
+            </div>
+          </Link>
+        ))}
+
+      <div className="mt4">{bullets}</div>
+    </div>
+  );
+};
 
 export default Slideshow;

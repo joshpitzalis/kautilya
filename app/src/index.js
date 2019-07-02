@@ -15,7 +15,6 @@ import Books from "./pages/Books";
 import Contact from "./pages/Contact";
 import ErrorPage from "./pages/ErrorPage";
 import Homepage from "./pages/Homepage.jsx";
-import registerServiceWorker from "./registerServiceWorker";
 import "./styles/index.css";
 import rootReducer from "./utils/rootReducer";
 
@@ -45,4 +44,4 @@ const Routes = () => {
 };
 
 ReactDOM.render(<Routes />, document.getElementById("root"));
-registerServiceWorker();
+// unregisterServiceWorker();

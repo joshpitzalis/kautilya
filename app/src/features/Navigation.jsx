@@ -26,30 +26,26 @@ const Navigation = ({ setLocale, locale }) => {
         </Link>
 
         <div className="pa3 flex-ns justify-end dn">
-          <Link
-            to="/books"
+          <a
+            // to="/books"
             className="f6 link dib  dim mr3 mr4-ns ttu"
-            href="#0"
+            href="#bookshelf"
           >
             Books
-          </Link>
-          <Link
-            to="/authors"
+          </a>
+          <a
+            // to="/authors"
             className="f6 link dib  dim mr3 mr4-ns ttu"
-            href="#0"
+            href="#writers"
           >
             Writers
-          </Link>
-          <Link
-            to="/contact"
-            className="f6 link dib  dim mr3 mr4-ns ttu"
-            href="#0"
-          >
+          </a>
+          <Link to="/" className="f6 link dib  dim mr3 mr4-ns ttu" href="#0">
             Contact Us
           </Link>
         </div>
         <p
-          className="f3 pointer dim grow"
+          className="f4 pointer dim grow"
           onClick={() => setLocale(locale === "en" ? "hi" : "en")}
         >
           {locale === "en" ? "हिंदी पुस्तकें" : "English Books"}

@@ -88,10 +88,13 @@ const Catalogue = () => {
             Download Our Catalogue
           </button>
           <p className="measure-wide mt3 near-black o-50">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Kautilya Books is an independent publishing house based in New
+            Delhi. Kautilya was created to encourage public discourse on matters
+            of the state and policy-making in contemporary India. Founded in
+            July 2014, Kautilya has published academic books on geopolitical
+            issues in Hindi and English. Our endeavour is to bring forth titles
+            related to the economy, governance, environment, politics and
+            society in various languages.
           </p>
         </div>
       ) : (
