@@ -1,26 +1,18 @@
 import React, { Component } from "react";
-import AuthorSlideshow from "../features/homepage/AuthorSlideshow";
+// import AuthorSlideshow from "../features/homepage/AuthorSlideshow";
 import Bookshelf from "../features/homepage/Bookshelf";
 import BookSlideshow from "../features/homepage/BookSlideshow";
-import agnipariksha from "../images/bookCovers/Agnipariksha.jpg";
-import realPashtun from "../images/bookCovers/TheRealPashtunQuestion.png";
-import tragicIllusion from "../images/bookCovers/TheTragiclllusionOfAnIslamicState.png";
 
 class Homepage extends Component {
   render() {
     return (
       <div>
         <header>
-          <BookSlideshow>
-            {realPashtun}
-            {agnipariksha}
-            {tragicIllusion}
-          </BookSlideshow>
-
+          <BookSlideshow />
           <p className=" w-100 relative bottom-2 tc">scroll down</p>
         </header>
         <Bookshelf />
-        <AuthorSlideshow />
+        {/* <AuthorSlideshow /> */}
       </div>
     );
   }

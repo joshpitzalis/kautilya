@@ -15,7 +15,10 @@ const Navigation = ({ setLocale, locale }) => {
   });
 
   return (
-    <animated.nav className="bg-transparent fixed w-100 z-999" style={fade}>
+    <animated.nav
+      className="bg-transparent fixed w-100 z-999 h1 pt3-ns"
+      style={fade}
+    >
       <div className="flex justify-between items-center bb b--black-10 w-75-ns center shadow-3 br1 ph4 bg-white center  ">
         <Link to="/" className=" link dn dib-ns">
           <h1>Kautilya</h1>
@@ -26,30 +29,30 @@ const Navigation = ({ setLocale, locale }) => {
         </Link>
 
         <div className="pa3 flex-ns justify-end dn">
-          <a
-            // to="/books"
-            className="f6 link dib  dim mr3 mr4-ns ttu"
-            href="#bookshelf"
-          >
-            Books
-          </a>
-          <a
+          {/* <Link to="/" className="f6 link dib  dim mr3 mr4-ns ttu">
+            Our Books
+          </Link> */}
+          {/* <a
             // to="/authors"
             className="f6 link dib  dim mr3 mr4-ns ttu"
             href="#writers"
           >
             Writers
-          </a>
-          <Link to="/" className="f6 link dib  dim mr3 mr4-ns ttu" href="#0">
+          </a> */}
+          <Link
+            to="/contact"
+            className="f6 link dib  dim mr3 mr4-ns ttu"
+            href="#0"
+          >
             Contact Us
           </Link>
         </div>
-        <p
+        {/* <p
           className="f4 pointer dim grow"
           onClick={() => setLocale(locale === "en" ? "hi" : "en")}
         >
           {locale === "en" ? "हिंदी पुस्तकें" : "English Books"}
-        </p>
+        </p> */}
         <div className="dn-ns dib" onClick={() => setToggle(!!!toggle)}>
           ●
         </div>

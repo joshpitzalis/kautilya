@@ -1,28 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
-const useInterval = (callback, delay) => {
-  // using set interval with useEffect https://overreacted.io/making-setinterval-declarative-with-react-hooks/
-
-  const savedCallback = React.useRef();
-
-  // Remember the latest callback.
-  React.useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
-
-  // Set up the interval.
-  React.useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
-    if (delay !== null) {
-      let id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
-};
+import { useInterval } from "./helpers";
 
 const Slideshow = () => {
   const authors = useSelector(store => Object.values(store.authors));
@@ -49,6 +28,7 @@ const Slideshow = () => {
           <Link
             to={`author/${id}`}
             className="pointer flex flex-row no-underline white "
+            key={id}
           >
             <div className="mr3 tr">
               <h3 className="f2">{name}</h3>

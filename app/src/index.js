@@ -26,12 +26,12 @@ const Routes = () => {
     <IntlProvider locale={locale} messages={flattenMessages(messages[locale])}>
       <Provider store={createStore(rootReducer)}>
         <BrowserRouter>
-          <main className="bg-light-blue pt3-ns">
+          <main className="bg-light-blue ">
             <Navigation setLocale={setLocale} locale={locale} />
             <Switch>
               <Route exact path="/" component={() => <Homepage />} />
               <Route exact path="/contact" component={() => <Contact />} />
-              <Route exact path="/books" component={() => <Books />} />
+              <Route exact path="/books/:book" component={Books} />
               <Route exact path="/authors" component={() => <Authors />} />
               <Route component={() => <ErrorPage />} />
             </Switch>

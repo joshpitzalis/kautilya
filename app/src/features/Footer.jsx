@@ -3,13 +3,15 @@ import { animated, useSpring } from "react-spring";
 
 const Footer = () => {
   return (
-    <footer className="pa4 pa5-l black-70 bt b--black-10 bg-white">
-      <Navigation />
-      <div className="flex-ns items-center">
-        <Catalogue />
-        <SocialMedia />
+    <footer className="pv4 pv5-l black-70 bt b--black-10 bg-white">
+      <div className="w-75-ns w-100 center">
+        <Navigation />
+        <div className="flex-ns items-center justify-between">
+          <Catalogue />
+          <SocialMedia />
+        </div>
+        <Copyright />
       </div>
-      <Copyright />
     </footer>
   );
 };
@@ -78,7 +80,7 @@ const Catalogue = () => {
     config: { duration: 1500 }
   });
   return (
-    <section className="mb5 w-75-ns w-100">
+    <section className="mb5 ">
       {visible ? (
         <div className="mt5" style={fade}>
           <button
@@ -87,7 +89,7 @@ const Catalogue = () => {
           >
             Download Our Catalogue
           </button>
-          <p className="measure-wide mt3 near-black o-50">
+          <p className="measure-wide mt4 near-black o-50">
             Kautilya Books is an independent publishing house based in New
             Delhi. Kautilya was created to encourage public discourse on matters
             of the state and policy-making in contemporary India. Founded in
@@ -98,7 +100,7 @@ const Catalogue = () => {
           </p>
         </div>
       ) : (
-        <animated.div style={fade} className="mb4 mb0-ns fl w-100 w-50-l mt5">
+        <animated.div style={fade} className="mb4 mb0-ns mt5">
           <p className="f5 fw6 mb2  mv3">Download Our Catalogue...</p>
           <input
             placeholder="Email Address"

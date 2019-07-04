@@ -1,74 +1,78 @@
-import React, { Children, Component } from "react";
-import { FormattedMessage } from "react-intl";
+import React from "react";
+// import { FormattedMessage } from "react-intl";
 import Overdrive from "react-overdrive";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
+import { useInterval } from "./helpers";
+const Slideshow = () => {
+  const books = useSelector(store => Object.values(store.books));
 
-class Slideshow extends Component {
-  state = {
-    total: 0,
-    current: 0
-  };
+  const total = books.length;
+  const [current, setCurrent] = React.useState(0);
 
-  componentDidMount() {
-    const { children } = this.props;
-    this.setState({ total: Children.count(children) });
-    this.interval = setInterval(this.showNext, 3000);
-  }
+  useInterval(() => {
+    setCurrent(current + 1 === total ? 0 : current + 1);
+  }, 5000);
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
+  const bullets = Array(total).fill("○");
+  bullets[current] = "●";
 
-  showNext = () => {
-    const { total, current } = this.state;
-    this.setState({ current: current + 1 === total ? 0 : current + 1 });
-  };
-  render() {
-    let currentChild = Children.toArray(this.props.children)[
-      this.state.current
-    ];
-
-    const books = Children.map(currentChild, child => (
-      <FeaturedBook child={child} />
-    ));
-
-    const bullets = Array(this.state.total).fill("○");
-    bullets[this.state.current] = "●";
-
-    return (
-      <div className="flex flex-column items-center justify-center bg-light-blue vh-100">
-        <>
-          {books}
-          <div className="mt3">{bullets}</div>
-        </>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="flex flex-column items-center justify-center bg-light-blue vh-100">
+      <>
+        <FeaturedBook {...books[current]} />
+        <div className="mt3">{bullets}</div>
+      </>
+    </div>
+  );
+};
 
 export default Slideshow;
 
-const FeaturedBook = animated(({ child }) => {
-  const fade = useSpring({
-    from: { opacity: 0 },
-    opacity: 1,
-    config: { duration: 2000 }
-  });
+// bookId: 10,
+//     coverImage: easy,
+//     name: `Easy Motion Tourist`,
+//     price: 225,
+//     language: "english",
+//     genre: [],
+//     author: "Leye Adenle",
+//     description: `Leye Adenle has written the book ‘Easy Motion Tourist’. The book is a compelling crime novel set in contemporary Lagos. It features Guy Collins, a British hack who stumbles into a murky underworld of the city. By the side of a club near one of the main hotels in Victoria Island, a woman’s body is found. As a potential suspect, a bystander named Collins is arrested by the police. After experiencing the unpleasant realities of a Nigerian Police cell, he is rescued by Amaka. The book delves into the dark side of Lagos with a narrative structure that feels fresh and an incredibly immersive atmosphere.`,
+//     purchaseLink: null,
+//     featured: false
 
-  return (
-    <section className="flex flex-row" style={fade}>
-      <Overdrive id="bookCover">
-        <figure>
-          <img src={child} className="shadow-1" height="350" alt="alt" />
-          <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
-        </figure>
-      </Overdrive>
-      <div className="ml3">
-        <h1 className="f1">
-          <FormattedMessage id="homepage.bookSlideShow.featured" />
-        </h1>
-        <p>something something</p>
-      </div>
-    </section>
-  );
-});
+const FeaturedBook = animated(
+  ({ coverImage, author, description, name, bookId }) => {
+    const fade = useSpring({
+      from: { opacity: 0 },
+      opacity: 1,
+      config: { duration: 2000 }
+    });
+
+    return (
+      <section className="flex flex-row pt5" style={fade}>
+        <Link to={`/books/${bookId}`} className="pointer">
+          <Overdrive id={bookId}>
+            <figure>
+              <img
+                src={coverImage}
+                className="shadow-1"
+                height="350"
+                alt="alt"
+              />
+              <figcaption className="hidden">By {author}</figcaption>
+            </figure>
+          </Overdrive>
+        </Link>
+        <div className="ml3 measure">
+          <h1 className="f2">
+            {name}
+            {/* <FormattedMessage id="homepage.bookSlideShow.featured" /> */}
+          </h1>
+          <h2 className="f3  ">By {author}</h2>
+          <p className="mt4 ">{description}</p>
+        </div>
+      </section>
+    );
+  }
+);
