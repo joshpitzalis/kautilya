@@ -9,8 +9,8 @@ const Books = ({ match }) => {
   );
 
   return (
-    <article className="w-75-ns center pv5 ">
-      <div className="flex pt6">
+    <article className="w-75-ns w-100 center pv5-ns  ">
+      <div className="flex flex-row-ns flex-column pt6">
         <Details
           name={name}
           author={author}
@@ -27,7 +27,7 @@ const Books = ({ match }) => {
 };
 
 const Image = ({ coverImage, bookId, name }) => (
-  <div className=" w-50-ns ">
+  <div className="w-50-ns pa3 center order-1">
     <Overdrive id={bookId} duration={1000}>
       <div className="flex justify-center items-center">
         <img height="500" alt={name} src={coverImage} />
@@ -37,10 +37,17 @@ const Image = ({ coverImage, bookId, name }) => (
 );
 
 const Details = ({ name, author, price, description }) => (
-  <header className=" w-50-ns pr4-ns pl4">
+  <header className="w-50-ns w-100 pa0-ns pa3  order-2">
     <h1 className="f2 lh-title fw9 mb3 mt0 pt3 bt bw2">{name}</h1>
     <h2 className="f3 mid-gray lh-title">{author}</h2>
-    <p className="f6 ttu tracked gray mv5">Rs. {price}</p>
+
+    <a
+      class="f4 link dim ph3 pv2 dib white bg-dark-blue mv4 br1 grow"
+      href="#0"
+    >
+      From Rs. {price}
+    </a>
+
     <p className="f5 lh-copy measure mt0-ns">{description}</p>
   </header>
 );
@@ -53,19 +60,19 @@ const SideList = () => {
       className="
     flex flex-column w-100"
     >
-      <h3 class="link  w-100 bb b--black-10 pb2 mv4 dim">Similar Books</h3>
+      <h3 class="link  w-100 bb b--black-10 pb2 mv4 dim pl3">Similar Books</h3>
 
-      <aside className="flex justify-between w-100">
+      <aside className="flex flex-row-ns flex-column justify-between w-100">
         {books &&
           books
             .slice(0, 3)
             .map(({ bookId, coverImage, name, author, price }) => (
               <Link to={`/books/${bookId}`}>
-                <article className="w5 flex justify-center">
+                <article className="w5 ma3 flex justify-center">
                   <img src={coverImage} class="w-auto" height="200" />
 
-                  <div class="flex flex-column justify-start pl2">
-                    <h1 class="f6 f5-ns fw6 lh-title black mv0">{name}</h1>
+                  <div class="flex flex-column justify-start pl3">
+                    <h1 class="f6 f5-ns fw6 lh-title black mv0 w4">{name}</h1>
                     <h2 class="f6 fw4 mt2 mb0 black-60">{author}</h2>
                     <dl class="mt2 f6">
                       <dt class="clip">Price</dt>

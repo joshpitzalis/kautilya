@@ -366,7 +366,7 @@ export const books = {
     author: "Anuradha G",
     description: `The book ‘Vaanprastha Yoga’ has been written by Anuradha Goray. The author mentions that in the third stage of human life an individual is supposed to give up or handover his household duties and responsibilities to his next generation, chiefly his son. If someone leads a life with discipline, determination and detachment, this third stage of life will not be a challenge. The author suggests that practicing yoga Asanas and Pranayams will help the body sustain itself in this third stage of life. The author further suggests that an early morning walk followed by a healthy nutrition breakfast is a must. The book further adds when parikarmas, i.e. Maitri, Karrena, Mudila and Upeksha or friendliness, compassion, enjoyment and benevolence are practiced, life becomes joyful and makes transition to the next phase that is sanyas or ascetism.`,
     purchaseLink: null,
-    featured: false
+    featured: true
   },
   27: {
     bookId: 27,
@@ -380,7 +380,7 @@ export const books = {
     The old man, troubled by the harsh reality of his own death and fooled by being in the past, found himself trying to play God in his search for immortality through his work, or through the choices of the boy. Leading the boy astray to a place foreign in a life he has already lived, he begins to doubt his own past, the realities of his action and ideas of immortality.
     Together on a graduation trip to find the big break, the answer to it all, they realize that life is, rather than thoughts, a series of choices not entirely made by themselves, with destiny always hiding round the corner.`,
     purchaseLink: null,
-    featured: false
+    featured: true
   },
   28: {
     bookId: 28,
@@ -393,6 +393,6 @@ export const books = {
     description: `In a fractious and rapidly transforming world order, consensus is breaking down at every level, and across nearly all issues. The most fundamental values, long held to be 'self-evident', are disintegrating, even as a resurgence of noxious ideologies afflicts the entire globe. As uncertainties multiply, fear rules, and people are driven into ancient attitudes of tribalism and hate. 
     This volume explores themes that tread ambiguous and contested ground, challenging the established narrative between conflicting perspectives, attempting to bring some clarity to issues that have long been intentionally obscured, exploring the only process available to humankind to move from darkness into the light.`,
     purchaseLink: null,
-    featured: false
+    featured: true
   }
 };

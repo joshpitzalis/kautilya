@@ -13,7 +13,7 @@ const Bookshelf = () => {
           books.map(({ bookId, coverImage, name }) => (
             <Link
               to={`/books/${bookId}`}
-              className="ma3 w4 pointer grow"
+              className="ma3 w4 pointer grow shadow-1 pa1"
               key={bookId}
             >
               {/* <Overdrive id={bookId.toString()}> */}

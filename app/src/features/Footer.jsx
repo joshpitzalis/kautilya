@@ -82,7 +82,7 @@ const Catalogue = () => {
   return (
     <section className="mb5 ">
       {visible ? (
-        <div className="mt5" style={fade}>
+        <div className="mt5 pa3" style={fade}>
           <button
             className="f4 link dim br1 ba bw1 ph3 pt2 pb1 b--near-black near-black tracked ttu pointer"
             onClick={() => setVisibility(false)}

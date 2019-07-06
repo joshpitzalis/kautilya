@@ -1,5 +1,5 @@
 import React from "react";
-
+import { interval } from "rxjs";
 export const useInterval = (callback, delay) => {
   // using set interval with useEffect https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 
@@ -20,4 +20,13 @@ export const useInterval = (callback, delay) => {
       return () => clearInterval(id);
     }
   }, [delay]);
+};
+
+export const useLoopedInterval = (duration, total) => {
+  const [current, setCurrent] = React.useState(0);
+  React.useEffect(() => {
+    const sub = interval(duration).subscribe(e => setCurrent(e));
+    return () => sub.unsubscribe();
+  }, []);
+  return current % total;
 };
