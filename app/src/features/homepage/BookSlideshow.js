@@ -11,10 +11,15 @@ const Slideshow = () => {
     Object.values(store.books).filter(book => book.featured === true)
   );
 
-  const prevBooks = [...books];
-  const nextBooks = [...books];
-  const nextBooksFirstItem = nextBooks.shift();
   const count = useLoopedInterval(3000, books.length);
+
+  const prevBookCollection = [...books];
+  const prevBooks = [prevBookCollection.pop(), ...prevBookCollection];
+
+  const nextBookCollection = [...books];
+  const nextBooksFirstItem = nextBookCollection.shift();
+  const nextBooks = [...nextBookCollection, nextBooksFirstItem];
+
   const bullets = Array(books.length).fill("○");
   bullets[count] = "●";
 
@@ -22,21 +27,9 @@ const Slideshow = () => {
     <div className="flex flex-column items-center justify-center bg-light-blue vh-100-ns">
       <>
         <div className="flex items-center">
-          <img
-            src={[prevBooks.pop(), ...prevBooks][count].coverImage}
-            className="shadow-1 o-70"
-            height="200"
-            alt="alt"
-            style={{ transform: "translate(-180px)" }}
-          />
+          <BackgroundBook book={prevBooks[count]} position="left" />
           <FeaturedBook {...books[count]} />
-          <img
-            src={[...nextBooks, nextBooksFirstItem][count].coverImage}
-            className="shadow-1 o-70"
-            height="200"
-            alt="alt"
-            style={{ transform: "translate(180px)" }}
-          />
+          <BackgroundBook book={nextBooks[count]} position="right" />
         </div>
         <div className="mt3">{bullets}</div>
       </>
@@ -65,7 +58,7 @@ const FeaturedBook = animated(
                 height="400"
                 alt="alt"
               />
-              <figcaption className="hidden">By {author}</figcaption>
+              {/* <figcaption className="hidden">By {author}</figcaption> */}
             </figure>
           </Overdrive>
         </Link>
@@ -81,3 +74,42 @@ const FeaturedBook = animated(
     );
   }
 );
+
+function BackgroundBook({ book, position }) {
+  const { xaxis, opacity } = useSpring({
+    from: { xaxis: 0, opacity: 0 },
+    xaxis: 1,
+    opacity: 0.75,
+    config: { duration: 2000 }
+  });
+
+  return (
+    <Link to={`/books/${book.bookId}`} className="pointer">
+      <Overdrive id={book.bookId}>
+        <figure>
+          <animated.img
+            src={book.coverImage}
+            className="shadow-2  dn dib-ns"
+            height="200"
+            alt="alt"
+            style={{
+              opacity,
+              transform: xaxis
+                .interpolate({
+                  range: [0, 1],
+                  output: [0, 100]
+                })
+                .interpolate(
+                  x =>
+                    `translate3d(${
+                      position === "left" ? "-" : "+"
+                    }${x}%, 0,  0)`
+                )
+            }}
+          />
+          {/* <figcaption className="hidden">By {author}</figcaption> */}
+        </figure>
+      </Overdrive>
+    </Link>
+  );
+}

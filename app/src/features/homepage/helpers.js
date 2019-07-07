@@ -24,9 +24,11 @@ export const useInterval = (callback, delay) => {
 
 export const useLoopedInterval = (duration, total) => {
   const [current, setCurrent] = React.useState(0);
+
   React.useEffect(() => {
     const sub = interval(duration).subscribe(e => setCurrent(e));
     return () => sub.unsubscribe();
   }, []);
+
   return current % total;
 };
